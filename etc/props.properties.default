@@ -1,0 +1,65 @@
+#--------------------         通用文件处理程序       --------------------------------#
+
+#待解析的数据的路径
+PATH_IN=./ins/
+
+#数据读取处理临时目录
+PATH_TMP_READ=./tmp/read/
+
+#数据处理的临时目录
+PATH_TMP_PROCESS=./tmp/process/
+
+#数据输出处理临时目录
+PATH_TMP_WRITE=./tmp/write/
+
+#输出数据路径
+PATH_OUT=./out/
+
+#异常数据备份路径
+PATH_BAD=./bad/
+
+#对处理的数据进行全量备份路径，空着不备份，有值则会备份到对应路径中
+PATH_BAK=./bak/
+
+#系统扫描时间间隔，单位为秒。一般无需修改。不配置默认为1秒
+SCAN_WATI_TIME=1
+
+#只监控的文件类型列表，多个类型用英文逗号分隔。如果为空表示扫描所有文件。
+WATCH_FILE_EXTENSION=zip,bcp,nb,txt
+
+#是否扫描监控的输入数据目录的子目录，填写：true或者false。默认为false。
+SCAN_IN_SUB_FOLDER=false
+
+#----------------------- 系统处理文件的插件及配置项 ---------------------------------#
+
+#要加载的插件的类的jar包路径。若为空时，则会在本工程中寻找包，否则在指定jar包中加载类
+#PLUGIN_TRANS_PATH=./plugin/x.jar
+PLUGIN_TRANS_PATH=
+#要加载的插件的包名，必须加上类名！
+#PLUGIN_TRANS_PACKAGE=com.spend.trans.plugin.XTrans
+#PLUGIN_TRANS_PACKAGE=com.spend.trans.plugin.GabZipAddIndexKey
+#PLUGIN_TRANS_PACKAGE=com.spend.trans.plugin.DataDistribute
+#PLUGIN_TRANS_PACKAGE=com.spend.trans.plugin.DataToExcel
+#PLUGIN_TRANS_PACKAGE=com.spend.trans.plugin.GabZipSeparateByIndex
+#PLUGIN_TRANS_PACKAGE=com.spend.trans.plugin.GabZipSeparateByProtype
+PLUGIN_TRANS_PACKAGE=com.spend.trans.plugin.GabZipAddIndexKeyHZ
+
+#要加载的插件要读取的配置，绝对路径
+#PLUGIN_TRANS_CONF=./conf/x.txt
+PLUGIN_TRANS_CONF=./conf/GabZipAddIndexKey.properties
+#PLUGIN_TRANS_CONF=./conf/DataDistribute.properties
+#PLUGIN_TRANS_CONF=./conf/GabZipSeparateByIndex.properties
+#PLUGIN_TRANS_CONF=
+
+#--------------------------    系统线程数配置 --------------------------------------#
+
+#系统消费者线程数，不填默认为1
+THREAD_CONSUMEN_NUM=4
+
+#---------------    系统线程池配置(系统配置，一般无需修改 )  -----------------------#
+
+CORE_POOL_SIZE=16
+MAXIMUM_POOL_SIZE=512
+KEEP_ALIVE_TIME=3600
+
+#-------------------- -------------------------------- -----------------------------#
